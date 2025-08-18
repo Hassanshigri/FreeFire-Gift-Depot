@@ -166,7 +166,7 @@ if (!window.cart) {
                             </div>
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title text-white">${product.name}</h5>
-                                <p class="card-text text-light-1 flex-grow-1">${product.description}</p>
+                                <p class="card-text text-muted flex-grow-1">${product.description}</p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
                                     <span class="h5 text-purple mb-0">$${product.price}</span>
                                     <button class="btn btn-purple btn-sm" onclick="cart.addItem(${JSON.stringify(product).replace(/"/g, '&quot;')})">
@@ -193,155 +193,110 @@ if (!window.cart) {
 const products = [
     {
         id: 1,
-        name: "110 Diamonds",
-        price: 1.49,
+        name: "PUBG Premium Battle Pass",
+        price: 9.99,
         image: "../images/battle-pass.jpg",
-        category: "Diamonds",
-        description: "Perfect starter pack for essential items and quick upgrades.",
+        category: "Battle Pass",
+        description: "Unlock exclusive skins, emotes, and rewards with the premium battle pass.",
         badge: "Popular"
     },
     {
         id: 2,
-        name: "231 Diamonds",
-        price: 2.99,
+        name: "Legendary AKM Skin",
+        price: 4.99,
         image: "../images/akm-skin.jpg",
-        category: "Diamonds",
-        description: "Great value for weapon skins and character upgrades.",
+        category: "Weapon Skins",
+        description: "Rare legendary skin for the AKM assault rifle with unique animations.",
         badge: "Limited"
     },
     {
         id: 3,
-        name: "583 Diamonds",
-        price: 6.99,
+        name: "Elite Player Outfit",
+        price: 7.99,
         image: "../images/elite-outfit.jpg",
-        category: "Diamonds",
-        description: "Excellent choice for serious players and collectors..",
+        category: "Character Skins",
+        description: "Premium elite outfit with custom animations and effects.",
         badge: "New"
     },
     {
         id: 4,
-        name: "5600 Diamonds",
-        price: 64.99,
+        name: "PUBG UC Credits",
+        price: 19.99,
         image: "../images/uc-credits.jpg",
-        category: "Diamonds",
-        description: "Professional player pack with maximum value.",
+        category: "Gaming Currency",
+        description: "1000 UC credits for in-game purchases and premium content.",
         badge: "Best Value"
     },
     {
         id: 5,
-        name: "1188 Diamonds",
-        price: 13.99,
+        name: "Pro Gamer Bundle",
+        price: 24.99,
         image: "../images/pro-bundle.jpg",
-        category: "Diamonds",
-        description: "Premium pack for Elite Pass and exclusive content.",
+        category: "Bundles",
+        description: "Complete bundle including skins, emotes, and exclusive items.",
         badge: "Hot Deal"
     },
     {
         id: 6,
-        name: "2530 Diamonds",
-        price: 29.99,
+        name: "Victory Royale Emote",
+        price: 2.99,
         image: "../images/victory-emote.jpg",
-        category: "Diamonds",
-        description: "Ultimate pack for the most dedicated gamers.",
+        category: "Emotes",
+        description: "Celebrate your wins with this exclusive victory emote.",
         badge: "Trending"
     },
     {
         id: 7,
-        name: "5600 Diamonds",
-        price: 64.99,
+        name: "Stealth Sniper Skin",
+        price: 6.99,
         image: "../images/sniper-skin.webp",
-        category: "Diamonds",
-        description: "Professional player pack with maximum value.",
+        category: "Weapon Skins",
+        description: "Stealth camouflage skin for sniper rifles with night vision effects.",
         badge: "Limited"
     },
     {
         id: 8,
-        name: "$10 Gift Card",
-        price: 10.0,
+        name: "Tactical Helmet",
+        price: 3.99,
         image: "../images/helmet.jpg",
-        category: "Gift Cards",
-        description: "Perfect gift for any Free Fire enthusiast.",
+        category: "Character Skins",
+        description: "Advanced tactical helmet with built-in communication system.",
         badge: "New"
     },
     {
         id: 9,
-        name: "$25 Gift Card",
-        price: 25.00,
+        name: "2000 UC Credits",
+        price: 39.99,
         image: "../images/uc-credits-2k.jpg",
-        category: "Gift Cards",
-        description: "Excellent value gift card for serious gamers.",
+        category: "Gaming Currency",
+        description: "2000 UC credits for premium gaming experience.",
         badge: "Best Value"
     },
     {
         id: 10,
-        name: "$50 Gift Card",
-        price: 50.00,
+        name: "Ultimate Battle Royale Pack",
+        price: 49.99,
         image: "../images/ultimate-pack.jpg",
-       category: "Gift Cards",
-        description: "Excellent value gift card for serious gamers.",
+        category: "Bundles",
+        description: "Complete collection of premium items and exclusive content.",
         badge: "Premium"
     },
     {
         id: 11,
-        name: "Cobra Rage Bundle",
-        price: 19.99,
+        name: "Chicken Dinner Celebration",
+        price: 1.99,
         image: "../images/chicken-dinner.jpg",
-        category: "Bundles",
-        description: "Exclusive skin bundle with weapon attachments.",
+        category: "Emotes",
+        description: "Celebrate your victory with this exclusive chicken dinner emote.",
         badge: "Popular"
     },
     {
         id: 12,
-        name: "Elite Pass Bundle",
-        price: 24.99,
+        name: "Season Pass Deluxe",
+        price: 14.99,
         image: "../images/season-pass.jpg",
-        category: "Bundles",
-        description: "Complete Elite Pass with bonus diamonds included.",
-        badge: "Hot Deal"
-    },
-        {
-        id: 13,
-        name: "Vehicle Skin Pack",
-        price: 22.99,
-        image: "../images/season-pass.jpg",
-        category: "Bundles",
-        description: "Complete collection of vehicle skins and upgrades.",
-        badge: "Hot Deal"
-    },
-        {
-        id: 14,
-        name: "Dragon AK Skin",
-        price: 15.99,
-        image: "../images/season-pass.jpg",
-        category: "Special Offers",
-        description: "Legendary weapon skin with special effects.",
-        badge: "Hot Deal"
-    },
-     {
-        id: 15,
-        name: "Chrono Character",
-        price: 39.99,
-        image: "../images/season-pass.jpg",
-        category: "Special Offers",
-        description: "Unlock the powerful Chrono character with unique abilities.",
-        badge: "Hot Deal"
-    },
-      {
-        id: 16,
-        name: "Pet Collection",
-        price: 18.99,
-        image: "../images/season-pass.jpg",
-        category: "Special Offers",
-        description: "Exclusive pet bundle with rare companions.",
-        badge: "Hot Deal"
-    },
-      {
-        id: 17,
-        name: "Mystery Loot Box",
-        price: 9.99,
-        image: "../images/season-pass.jpg",
-        category: "Special Offers",
-        description: "Surprise box containing rare skins and items.",
+        category: "Battle Pass",
+        description: "Deluxe season pass with bonus rewards and exclusive content.",
         badge: "Hot Deal"
     }
 ];
