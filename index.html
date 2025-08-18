@@ -29,118 +29,188 @@
     />
     <link href="./style.css" rel="stylesheet" />
   </head>
-  <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-transparent shadow-sm backdrop-blur sticky-top"
-    >
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="../">
-          <i class="fas fa-fire text-white me-2" style="font-size: 32px"></i>
-          <span class="fw-bold text-white">Free Fire Gift Depot</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto text-center">
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../shop/">Shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3 active" href="../blog/">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-3" href="../contact/">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link position-relative px-3"
-                href="../cart/"
-                id="cart-nav"
-              >
-                <i class="fas fa-shopping-cart"></i>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-purple"
-                  id="cart-count"
-                  >0</span
-                >
-              </a>
-            </li>
-          </ul>
-          <ul class="navbar-nav d-none d-lg-flex align-items-center">
-            <li class="nav-item">
-              <a class="btn btn-purple btn-sm" href="../register/">
-                <i class="fas fa-user-plus me-1"></i> Register Now
-              </a>
-            </li>
-          </ul>
-          <div class="mobile-auth-buttons d-lg-none mt-auto text-center">
-            <a class="btn btn-outline-purple" href="../login/">
-              <i class="fas fa-user me-1"></i> Login
-            </a>
-            <a class="btn btn-purple mt-2" href="../register/">
-              <i class="fas fa-user-plus me-1"></i> Register Now
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <style>
+  /* Glass Effect Navbar */
+  .navbar-custom {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
 
-    <!-- HERO SECTION -->
-    <section
-      class="hero-section py-5 position-relative"
-      style="
-        background-image: url('images/ff-hero.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      "
+  /* On Scroll - Darker Navbar */
+  .navbar-custom.scrolled {
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Brand Styling */
+  .navbar-brand span {
+    background: linear-gradient(45deg, #14e8f0, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Nav Links */
+  .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  /* Hover Underline Animation */
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00ffea;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover::after {
+    width: 60%;
+  }
+
+  /* Active Link */
+  .navbar-nav .nav-link.active {
+    color: #ff6a00;
+  }
+
+  /* Cart Badge Animation */
+  #cart-count {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+</style>
+  <body>
+  
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+  <div class="container">
+            <!-- Logo -->
+<a class="navbar-brand d-flex align-items-center" href="../">
+    <img src="/images/logo.png" alt="Free Fire Logo" style="height: 70px; width: auto;" class="me-2">
+
+</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      <div class="container">
-        <div class="row align-items-center min-vh-75">
-          <div class="col-12 col-lg-6">
-            <h1
-              class="display-3 fw-bold text-white mb-4 gradient-text"
-              style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)"
-            >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item"><a class="nav-link px-3 active" href="../">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="../shop/">Shop</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="../blog/">Blog</a></li>
+        <li class="nav-item"><a class="nav-link px-3" href="../contact/">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative px-3" href="../cart/" id="cart-nav">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-none d-lg-flex align-items-center">
+        <li class="nav-item">
+          <a class="btn btn-warning btn-sm text-dark" href="../register/">
+            <i class="fas fa-user-plus me-1"></i> Register Now
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-auth-buttons d-lg-none mt-auto text-center">
+        <a class="btn btn-outline-warning text-light" href="../login/">
+          <i class="fas fa-user me-1"></i> Login
+        </a>
+        <a class="btn btn-warning mt-2 text-dark" href="../register/">
+          <i class="fas fa-user-plus me-1"></i> Register Now
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+   <!-- HERO SECTION with Auto Carousel -->
+<section class="hero-section position-relative">
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active" style="background-image: url('images/Green\ Illustrative\ Gift\ Voucher\ Certificate.png'); background-size: cover; background-position: center; min-height: 75vh;">
+        <div class="container d-flex justify-content-center align-items-center min-vh-75 text-center">
+          <div class="col-12 col-lg-8 text-white">
+            <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5)">
               Level Up Your Free Fire Game
             </h1>
-            <p
-              class="lead text-light mb-4"
-              style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)"
-            >
-              Get exclusive Free Fire diamonds, elite passes, gun skins, and
-              premium bundles. Register now and enjoy 20% bonus on your first
-              purchase!
+            <p class="lead mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5)">
+              Get exclusive Free Fire diamonds, elite passes, gun skins, and premium bundles.
+              Register now and enjoy 20% bonus on your first purchase!
             </p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
+            <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
               <a href="shop/" class="btn btn-gradient btn-lg">Shop Now</a>
-              <a
-                href="register/"
-                class="btn btn-outline-purple btn-lg"
-                >Register & Get Bonus</a
-              >
+              <a href="register/" class="btn btn-outline-purple btn-lg">Register & Get Bonus</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" style="background-image: url('images/Green\ Illustrative\ Gift\ Voucher\ Certificate.png'); background-size: cover; background-position: center; min-height: 75vh;">
+        <div class="container d-flex justify-content-center align-items-center min-vh-75 text-center">
+          <div class="col-12 col-lg-8 text-white">
+            <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5)">Exclusive Skins & Weapons</h1>
+            <p class="lead mb-4">
+              Upgrade your gameplay with rare skins and powerful weapons.
+            </p>
+            <a href="shop/" class="btn btn-gradient btn-lg">Explore Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" style="background-image: url('images/Green\ Illustrative\ Gift\ Voucher\ Certificate.png'); background-size: cover; background-position: center; min-height: 75vh;">
+        <div class="container d-flex justify-content-center align-items-center min-vh-75 text-center">
+          <div class="col-12 col-lg-8 text-white">
+            <h1 class="display-3 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5)">Join the Free Fire Community</h1>
+            <p class="lead mb-4">
+              Get bonuses, early access, and member-only deals.
+            </p>
+            <a href="register/" class="btn btn-outline-purple btn-lg">Join Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+
  <section class="py-5 bg-dark-secondary">
       <div class="container">
         <div class="section-spacing">
           <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold text-white mb-3">Free Fire UCLab by the Numbers</h2>
+            <h2 class="display-4 fw-bold text-white mb-3">Free Fire   by the Numbers</h2>
             <p class="lead text-light">Trusted by thousands of Free Fire players worldwide</p>
           </div>
           <div class="row g-4 mb-5">
@@ -177,7 +247,7 @@
         <div class="section-spacing">
           <div class="text-center">
             <h2 class="display-5 fw-bold text-white mb-4">Ready to Dominate the Battlefield?</h2>
-            <p class="lead text-light mb-4">Join thousands of Free Fire players who trust Free Fire UCLab for their gaming needs</p>
+            <p class="lead text-light mb-4">Join thousands of Free Fire players who trust Free Fire   for their gaming needs</p>
             <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
               <a href="shop/" class="btn btn-gradient btn-lg">Start Shopping</a>
               <a href="register/" class="btn btn-outline-purple btn-lg">Join Now</a>
@@ -200,13 +270,13 @@
               <a href="register/" class="btn btn-gradient btn-lg">Register Now & Get Bonus</a>
             </div>
             <div class="col-lg-6 text-center">
-              <img src="images/home-bg.png" alt="Gaming Bundle" class="img-fluid rounded" style="max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
+              <img src="images/freefire1.jpg" alt="Gaming Bundle" class="img-fluid rounded" style="max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);" />
             </div>
           </div>
         </div>
         <div class="section-spacing">
           <div class="text-center mb-5">
-            <h2 class="display-4 fw-bold text-white mb-3">Why Choose Free Fire UCLab?</h2>
+            <h2 class="display-4 fw-bold text-white mb-3">Why Choose Free Fire  ?</h2>
             <p class="lead text-light">Your trusted source for premium gaming items and exclusive content</p>
           </div>
           <div class="row g-4 mb-5">
@@ -257,7 +327,7 @@
             <div class="col-md-6 col-lg-4">
               <div class="card bg-dark-card border-purple h-100">
                 <div class="position-relative">
-                  <img src="images/battle-pass.jpg" alt="Free Fire Premium Battle Pass" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                  <img src="images/freefire2.jpg" alt="Free Fire Premium Battle Pass" class="card-img-top" style="height: 200px; object-fit: cover;" />
                   <span class="badge bg-purple position-absolute top-0 end-0 m-2">Popular</span>
                 </div>
                 <div class="card-body d-flex flex-column">
@@ -273,7 +343,7 @@
             <div class="col-md-6 col-lg-4">
               <div class="card bg-dark-card border-purple h-100">
                 <div class="position-relative">
-                  <img src="images/akm-skin.jpg" alt="Legendary AKM Skin" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                  <img src="images/freefire3.jpg" alt="Legendary AKM Skin" class="card-img-top" style="height: 200px; object-fit: cover;" />
                   <span class="badge bg-danger position-absolute top-0 end-0 m-2">Limited</span>
                 </div>
                 <div class="card-body d-flex flex-column">
@@ -289,7 +359,7 @@
             <div class="col-md-6 col-lg-4">
               <div class="card bg-dark-card border-purple h-100">
                 <div class="position-relative">
-                  <img src="images/pro-bundle.jpg" alt="Pro Gamer Bundle" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                  <img src="images/freefire4.jpg" alt="Pro Gamer Bundle" class="card-img-top" style="height: 200px; object-fit: cover;" />
                   <span class="badge bg-warning position-absolute top-0 end-0 m-2">Hot Deal</span>
                 </div>
                 <div class="card-body d-flex flex-column">
@@ -357,11 +427,29 @@
         </div>
       </div>
     </section>
+     <div id="cookie-popup" class="cookie-popup">
+      <div class="card bg-dark-card border-purple">
+        <div class="card-body p-3">
+          <div class="d-flex align-items-start">
+            <i class="fas fa-cookie-bite text-purple me-3 mt-1"></i>
+            <div class="flex-grow-1">
+              <h6 class="text-white mb-2">Cookie Notice</h6>
+              <p class="text-white small mb-3">We use cookies to enhance your browsing experience and provide personalized content. By continuing to use our site, you agree to our cookie policy.</p>
+              <div class="d-flex gap-2">
+                <button class="btn btn-purple btn-sm" onclick="acceptCookies()">Accept All</button>
+                <button class="btn btn-outline-secondary btn-sm" style="color: #fff; background-color: #FF6B35; border-color: #FF6B35;" onclick="declineCookies()">Decline</button>
+              </div>
+            </div>
+            <button class="btn-close btn-close-white" onclick="declineCookies()"></button>
+          </div>
+        </div>
+      </div>
+    </div>
      <footer class="bg-dark-secondary py-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5 class="text-white mb-3">Free Fire UCLab</h5>
+            <h5 class="text-white mb-3">Free Fire  </h5>
             <p class="text-light">Your premier destination for Free Fire gaming essentials. Get exclusive skins, codes, and mods to dominate the battlefield.</p>
             <p class="text-light small">We are not an affiliate agency. All products are sold independently through our platform.</p>
           </div>
@@ -388,7 +476,7 @@
               <i class="fas fa-phone me-2"></i>+1 555-123-4567
             </p>
             <p class="text-light mb-2">
-              <i class="fas fa-envelope me-2"></i>info@FreeFireuclab.com
+              <i class="fas fa-envelope me-2"></i>info@freefiregiftdepot.com
             </p>
             <div class="d-flex gap-3 mt-3">
               <a href="javascript:void(0)" class="text-light fs-5"><i class="fab fa-facebook"></i></a>
@@ -401,7 +489,7 @@
         <hr class="border-purple">
         <div class="row">
           <div class="col-12 text-center">
-            <p class="text-light mb-0">&copy; 2024 Free Fire UCLab. All rights reserved.</p>
+            <p class="text-light mb-0">&copy; 2025 FreeFire  . All rights reserved.</p>
           </div>
         </div>
       </div>
